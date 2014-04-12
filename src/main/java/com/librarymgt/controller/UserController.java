@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -63,6 +64,22 @@ public class UserController {
 		List<User> userlist = userService.getAllUser();
 		mav.addObject("user",userlist);
 		return mav;
+	}
+	
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	public ModelAndView editUser(@PathVariable int id) {
+		final User use = userService.getUserById(id);
+		ModelAndView mav = new ModelAndView("user");
+		mav.addObject("user", use);
+		return mav;
+	}
+
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public ModelAndView deleteUser(@PathVariable int id){
+		System.out.println("id:" + id);
+		userService.deleteUserById(id);
+		return new ModelAndView(new RedirectView("/librarymgt/user/userlist"));
+		
 	}
 
 }

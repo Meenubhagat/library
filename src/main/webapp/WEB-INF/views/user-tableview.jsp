@@ -42,8 +42,8 @@
 	 
 	 
  	<td>
- 	<a class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/register/edit/${u.id}">Edit</a>
-  	<a class="btn btn-danger btn-lg" href="${pageContext.request.contextPath}/register/delete/${u.id}">Delete</a>
+ 	<a class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/user/edit/${u.id}">Edit</a>
+  	<a class="btn btn-danger btn-lg" href="${pageContext.request.contextPath}/user/delete/${u.id}">Delete</a>
   	
  	</td>
  	</tr>

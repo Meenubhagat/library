@@ -17,10 +17,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User loadUserByUsername(String username) {
-		List<User> users = userRepository.findByUsername(username);
-		if(users.size() != 0) {
-			return users.get(0);
-		}
+		
+		
 		return null;
 	}
 	
@@ -45,6 +43,18 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<User> getAllUser() {
 		return (List<User>) userRepository.findAll();
+	}
+
+	@Override
+	public User getUserById(int id) {
+		// TODO Auto-generated method stub
+		return userRepository.findOne(id);
+	}
+
+	@Override
+	public boolean deleteUserById(int userId) {
+		userRepository.delete(userId);
+		return true;
 	}
 
 }

@@ -10,6 +10,10 @@ public interface UserService {
   
   public List<User>getAllUser();
   
+  public User getUserById(int id);
+  
+  public boolean deleteUserById(int userId);
+  
   public User loadUserByUsername(String username);
 
   public User insertUser(String username, String password);
