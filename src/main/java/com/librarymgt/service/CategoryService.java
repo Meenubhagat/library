@@ -9,5 +9,7 @@ public interface CategoryService {
 	public Category create(Category category);
 	
 	public List<Category>getAllCategory();
+	
+	public Category getCategoryById(int id);
 
 }
