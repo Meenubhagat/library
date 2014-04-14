@@ -19,7 +19,7 @@
    <div class="form-group">
     <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
     <div class="col-xs-4">
-      <input type="text" class="form-control" id="p_id" placeholder="Parent Id" name="parentid" value="${cat.pid }">
+      <input type="text" class="form-control" id="p_id" placeholder="Parent Id" name="parentid" value="${cat.parent_id }">
     </div>
   </div><br>
  
