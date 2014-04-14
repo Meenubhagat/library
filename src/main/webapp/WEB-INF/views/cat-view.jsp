@@ -15,12 +15,12 @@
  		</tr>
   			
   				
- 	<c:forEach items="${requestScope.user}" var="c">
+ 	<c:forEach items="${requestScope.category}" var="c">
   	<tr>
   	 
-	 <td>${c.categoryid}</td>
+	 <td>${c.id}</td>
 	 <td>${c.name }</td>
-	 <td>${c.parentid }</td>
+	 <td>${c.pid }</td>
 	 
 	 
  	<td>
