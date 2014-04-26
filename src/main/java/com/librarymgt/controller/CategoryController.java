@@ -55,5 +55,12 @@ public class CategoryController {
 		mav.addObject("Category", cat1);
 		return mav;
 	}
+	
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public ModelAndView deleteCategory(@PathVariable int id){
+		System.out.println("id:" + id);
+		categoryService.deleteCategoryById(id);
+		return new ModelAndView(new RedirectView(""));
+	}
 
 }

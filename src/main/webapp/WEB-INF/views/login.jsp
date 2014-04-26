@@ -12,7 +12,7 @@
     </c:if>
     <c:if test="${param.logout != null}">       
         <p>
-            You have been logged out.
+            You have been logged out :).
         </p>
     </c:if>
     <p>

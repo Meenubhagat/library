@@ -39,6 +39,8 @@ public class UserServiceImpl implements UserService {
 		User createdUser = user;
 		return userRepository.save(createdUser);
 	}
+	
+	
 
 	@Override
 	public List<User> getAllUser() {

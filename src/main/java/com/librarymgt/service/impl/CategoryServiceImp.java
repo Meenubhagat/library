@@ -27,4 +27,16 @@ public class CategoryServiceImp implements CategoryService {
 		return (List<Category>) categoryRepository.findAll();
 	}
 
+	@Override
+	public Category getCategoryById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean deleteCategoryById(int categoryId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -35,16 +35,16 @@ public class User {
 	@Column(name="firstname", nullable=false)
 	public String firstname;
 	
-	@Column(name="middlename", nullable=false)
+	@Column(name="middlename", nullable=true)
 	public String middlename;
 	
-	@Column(name="lastname", nullable=false)
+	@Column(name="lastname", nullable=true)
 	public String lastname;
 	
-	@Column(name="course", nullable=false)
+	@Column(name="course", nullable=true)
 	public String course;
 	
-	@Column(name="rollno", nullable=false)
+	@Column(name="rollno", nullable=true)
 	public String rollno;
 
 	@Column(name="password", nullable=false)
@@ -53,7 +53,7 @@ public class User {
 	@Column(name="enabled", nullable=false)
     public Boolean enabled;
 	
-	@Column(name="type", nullable=false)
+	@Column(name="type", nullable=true)
 	public String type;
 	
 	@Column(name="photo", nullable=true)
