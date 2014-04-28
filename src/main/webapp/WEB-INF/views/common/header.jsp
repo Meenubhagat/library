@@ -33,16 +33,19 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/cencolshare/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <sec:authorize access="isAuthenticated()">
+		    <li><a href="${pageContext.request.contextPath}/cat/catlist">Category</a></li>
+		    <li><a href="${pageContext.request.contextPath}/books">Books</a></li>
+		</sec:authorize>        
       </ul>
       <ul class="nav navbar-nav pull-right">
 		<sec:authorize access="isAnonymous()">
-		    <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+			<li><a href="${pageContext.request.contextPath}/register/create">Register</a></li>
+		    <li><a href="${pageContext.request.contextPath}/register/login">Login</a></li>
 		</sec:authorize>
-		<sec:authorize access="isAuthenticated()">
+        <sec:authorize access="isAuthenticated()">
 		    <li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
-		</sec:authorize>        
+		</sec:authorize>		
       </ul>
     </div><!--/.nav-collapse -->
   </div>

@@ -53,7 +53,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	.csrf().disable()
         	.authorizeRequests()
           
-            	.antMatchers("/register/**").permitAll();
+            	.antMatchers("/register/**").permitAll()
+            	.anyRequest().authenticated()
+                .and()
+            .logout()
+            	.logoutSuccessUrl("/login")
+            	.and()
+            .formLogin()
+                .loginPage("/login")
+                .permitAll();
           
         http.exceptionHandling().accessDeniedHandler(hl);
     	
