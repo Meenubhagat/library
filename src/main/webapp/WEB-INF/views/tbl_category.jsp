@@ -16,6 +16,21 @@
     </div>
   </div>
   
+  <div class="form-group">
+  	 <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
+  	 <div class="col-xs-4">
+  	 <select class="form-control" id="parentid" name="parentid">
+  	 <option>0</option>
+  	     
+  	 <option>1</option>
+  	     
+   	 <option >2</option>
+	 </select>
+  	 </div>
+  	 </div> <br>		
+  	 
+  
+ 
    <div class="form-group">
     <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
     <div class="col-xs-4">

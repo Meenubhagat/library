@@ -39,4 +39,10 @@ public class CategoryServiceImp implements CategoryService {
 		return false;
 	}
 
+	@Override
+	public Category getParentById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
