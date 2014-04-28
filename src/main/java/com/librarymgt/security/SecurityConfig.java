@@ -31,8 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     	 auth
          .jdbcAuthentication()
          	 .dataSource(dataSource)
-         	 .usersByUsernameQuery("select username, password, true from tbl_user where username=?")
-         	 .authoritiesByUsernameQuery("select username as username, role from tbl_user where username = ?");
+         	
+         	 .usersByUsernameQuery(" select email AS username, PASSWORD, TRUE FROM tbl_user WHERE email=? AND enabled=TRUE")
+         	 .authoritiesByUsernameQuery("select email as username, role from tbl_user where email = ? and enabled=true");
     	
     }
 
@@ -51,19 +52,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
         	.csrf().disable()
         	.authorizeRequests()
-            	.antMatchers("/shop/**").hasAuthority("ADMIN")
-            	.antMatchers("/user/**").permitAll()
-            	.antMatchers("/cat/**").permitAll()
-            	.antMatchers("/register/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .logout()
-            	.logoutSuccessUrl("/login")
-            	.and()
-            	.formLogin()
-                .loginPage("/login") 
-                .permitAll();
-        
+          
+            	.antMatchers("/register/**").permitAll();
+          
         http.exceptionHandling().accessDeniedHandler(hl);
     	
     }

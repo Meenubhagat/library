@@ -41,8 +41,8 @@ public class AuthController {
 		
 		
 		user1.setFirstname(request.getParameter("firstname"));
-		user1.setEmail("email");
-		user1.setPassword("password");
+		user1.setEmail(request.getParameter("email"));
+		user1.setPassword(request.getParameter("password"));
 		user1.setEnabled(true);
 		user1.setRole(Role.ROLE_USER);
 		user1.setGender("male");
