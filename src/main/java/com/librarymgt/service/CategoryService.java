@@ -10,9 +10,9 @@ public interface CategoryService {
 	
 	public List<Category>getAllCategory();
 	
-	public Category getCategoryById(int id);
+	public Category getCategoryById();
 	
-	public List<Category> getParentById();
+	public List<Category> getParentCategories();
 	
 	public boolean deleteCategoryById(int categoryId);
 

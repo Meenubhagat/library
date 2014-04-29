@@ -34,8 +34,19 @@ public class CategoryServiceImp implements CategoryService {
 		return (List<Category>) categoryRepository.findAll();
 	}
 
+
+
 	@Override
-	public Category getCategoryById(int id) {
+	public List<Category> getParentCategories(){
+		final String query = "SELECT * FROM tbl_cat  WHERE parent_id = 0";
+		final Query q = (Query) em.createNativeQuery(query);
+		List<Category> result = q.getResultList();
+		 
+		return result;
+	}
+
+	@Override
+	public Category getCategoryById() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -44,15 +55,6 @@ public class CategoryServiceImp implements CategoryService {
 	public boolean deleteCategoryById(int categoryId) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public Category getParentById() {
-		final String query = "SELECT * FROM tbl_cat  WHERE parent_id = 0";
-		final Query q = (Query) em.createNativeQuery(query);
-		List<Category> result = q.getResultList();
-		 
-		return null;
 	}
 
 }

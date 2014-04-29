@@ -29,6 +29,9 @@ public class CategoryController {
 	@RequestMapping(value="/create", method=RequestMethod.GET)
 	public ModelAndView newCategoryPage(){
 		ModelAndView mav = new ModelAndView("tbl_category");
+		mav.addObject("title1", "Our Category");
+		List<Category> list = categoryService.getParentCategories();
+		mav.addObject("category",list);
 		return mav;
 	}
 	
@@ -50,7 +53,7 @@ public class CategoryController {
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public ModelAndView editCategory(@PathVariable int id){
-		final Category cat1 = categoryService.getCategoryById(id);
+		final Category cat1 = categoryService.getCategoryById();
 		ModelAndView mav = new ModelAndView("cat");
 		mav.addObject("Category", cat1);
 		return mav;
