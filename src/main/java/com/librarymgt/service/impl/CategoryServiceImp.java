@@ -2,6 +2,10 @@ package com.librarymgt.service.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +19,9 @@ public class CategoryServiceImp implements CategoryService {
 	@Autowired
 	CategoryRepository categoryRepository;
 
+	@PersistenceContext
+    EntityManager em;
+	
 	@Override
 	public Category create(Category category) {
 		Category createdCategory = category;
@@ -41,7 +48,10 @@ public class CategoryServiceImp implements CategoryService {
 
 	@Override
 	public Category getParentById(int id) {
-		// TODO Auto-generated method stub
+		final String query = "SELECT * FROM tbl_cat  WHERE parent_id = 0";
+		final Query q = (Query) em.createNativeQuery(query);
+		List<Category> result = q.getResultList();
+		 
 		return null;
 	}
 
