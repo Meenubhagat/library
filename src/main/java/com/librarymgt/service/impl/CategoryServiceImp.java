@@ -47,7 +47,7 @@ public class CategoryServiceImp implements CategoryService {
 	}
 
 	@Override
-	public Category getParentById(int id) {
+	public Category getParentById() {
 		final String query = "SELECT * FROM tbl_cat  WHERE parent_id = 0";
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Category> result = q.getResultList();
