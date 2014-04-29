@@ -1,7 +1,7 @@
 <%@ include file="common/header.jsp"%>
 
   		<center><h1>User Detail</h1></center>
-		<a type="button" class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/user/create">
+		<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/user/create">
 		<b>New User</b>
 		</a>
 		
@@ -32,8 +32,8 @@
 	 
 	 
  	<td>
- 	<a class="btn btn-success btn-lg" href="${pageContext.request.contextPath}/user/edit/${u.id}">Edit</a>
-  	<a class="btn btn-danger btn-lg" href="${pageContext.request.contextPath}/user/delete/${u.id}">Delete</a>
+ 	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/user/edit/${u.id}">Edit</a>
+  	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/user/delete/${u.id}">Delete</a>
   	
  	</td>
  	</tr>

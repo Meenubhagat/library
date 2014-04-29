@@ -19,24 +19,15 @@
   <div class="form-group">
   	 <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
   	 <div class="col-xs-4">
-  	 <select class="form-control" id="parentid" name="parentid">
-  	 <option>0</option>
-  	     
-  	 <option>1</option>
-  	     
-   	 <option >2</option>
+  	 <select class="form-control" id="pid" name="pid">
+  	 <option value="0">None</option>
+  	 <c:forEach items="${category}" var="parentcat">
+			
+			 <option value="${parentcat.id}">${parentcat.name}</option>
+			</c:forEach>
 	 </select>
   	 </div>
   	 </div> <br>		
-  	 
-  
- 
-   <div class="form-group">
-    <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
-    <div class="col-xs-4">
-      <input type="text" class="form-control" id="p_id" placeholder="Parent Id" name="parentid" value="${cat.parentid }">
-    </div>
-  </div><br>
  
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

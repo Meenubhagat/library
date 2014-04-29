@@ -27,10 +27,10 @@ public class Category {
 	private Integer id;
 	
 	@Column(name="name")
-	public String name;
+	private String name;
 	
 	@Column(name="parent_id")
-	public Integer pid;
+	private Integer pid;
 
 	public Integer getId() {
 		return id;

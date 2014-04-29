@@ -1,7 +1,7 @@
 <%@ include file="common/header.jsp"%>
 
   		<center><h1>Category Detail</h1></center>
-		<a type="button" class="btn btn-success btn-lg">
+		<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/cat/create">
 		<b>New User</b>
 		</a>
 		
@@ -24,8 +24,8 @@
 	 
 	 
  	<td>
- 	<a class="btn btn-success btn-lg">Edit</a>
-  	<a class="btn btn-danger btn-lg">Delete</a>
+ 	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/cat/edit/${c.id}">Edit</a>
+  	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/cat/delete/${c.id}">Delete</a>
   	
  	</td>
  	</tr>

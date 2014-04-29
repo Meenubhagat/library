@@ -30,8 +30,9 @@ public class CategoryController {
 	public ModelAndView newCategoryPage(){
 		ModelAndView mav = new ModelAndView("tbl_category");
 		mav.addObject("title1", "Our Category");
-		List<Category> list = categoryService.getParentCategories();
-		mav.addObject("category",list);
+		List<Category> parentCategorie = categoryService.getParentCategories();
+		System.out.println(parentCategorie.get(0).getName());
+		mav.addObject("category",parentCategorie);
 		return mav;
 	}
 	
@@ -63,7 +64,7 @@ public class CategoryController {
 	public ModelAndView deleteCategory(@PathVariable int id){
 		System.out.println("id:" + id);
 		categoryService.deleteCategoryById(id);
-		return new ModelAndView(new RedirectView(""));
+		return new ModelAndView(new RedirectView("/librarymgt/cat/catlist"));
 	}
 
 }
