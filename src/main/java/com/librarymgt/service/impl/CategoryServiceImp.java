@@ -1,5 +1,8 @@
 package com.librarymgt.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -58,13 +61,37 @@ public class CategoryServiceImp implements CategoryService {
 	}
 
 	@Override
-	public List<Category> getCategoriesWithParent() {
+	public List<Category> getCategoryWithParent() {
 		
 		final String query = "SELECT category.*, parent.name FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id";
-		final Query q = (Query) em.createNativeQuery(query, Category.class);
-		List<Category> result = (List<Category>) q.getResultList();
+		final Query q = (Query) em.createNativeQuery(query, Object.class);
+		List<Object> result = (List<Object>) q.getResultList();
 		 
 		return result;
 	}
 
+	@Override
+	public List<Category> convertResultToList(final List<Object> result) {
+		final List<DiscussionComments> results = new ArrayList<DiscussionComments>();
+		for (int i = 0; i < result.size(); i++) {
+			final DiscussionComments dc = new DiscussionComments();
+			SimpleDateFormat format = new SimpleDateFormat("MMM dd, yyyy hh:mm");
+
+			Object[] r = (Object[]) result.get(i);
+			dc.setCommentId((Integer)r[0]);
+			dc.setComment((String)r[1]);
+			dc.setCommentDate(format.format((Date)r[2]));
+			dc.setUserId((Integer)r[3]);
+			dc.setFirstName((String)r[4]);
+			dc.setLastName((String)r[5]);
+			dc.setPhoto((String)r[6]);
+			results.add(dc);
+
+			System.out.println(r[0]);
+		}
+		return results;
+	}
+
+	
+	
 }
