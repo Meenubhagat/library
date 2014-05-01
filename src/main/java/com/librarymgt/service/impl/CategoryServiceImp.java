@@ -2,7 +2,6 @@ package com.librarymgt.service.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.librarymgt.model.Category;
+import com.librarymgt.model.categorywithparent;
 import com.librarymgt.repository.CategoryRepository;
 import com.librarymgt.service.CategoryService;
 
@@ -61,33 +61,27 @@ public class CategoryServiceImp implements CategoryService {
 	}
 
 	@Override
-	public List<Category> getCategoryWithParent() {
+	public List<categorywithparent> getCategoryWithParent() {
 		
-		final String query = "SELECT category.*, parent.name FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id";
-		final Query q = (Query) em.createNativeQuery(query, Object.class);
-		List<Object> result = (List<Object>) q.getResultList();
+		final String query = "SELECT category.*, parent.name AS parentname FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id";
+		final Query q = (Query) em.createNativeQuery(query);
+		List<Object> result = q.getResultList();
 		 
-		return result;
+		return convertResultToList(result);
 	}
 
-	@Override
-	public List<Category> convertResultToList(final List<Object> result) {
-		final List<DiscussionComments> results = new ArrayList<DiscussionComments>();
+	private List<categorywithparent> convertResultToList(final List<Object> result) {
+		final List<categorywithparent> results = new ArrayList<categorywithparent>();
 		for (int i = 0; i < result.size(); i++) {
-			final DiscussionComments dc = new DiscussionComments();
-			SimpleDateFormat format = new SimpleDateFormat("MMM dd, yyyy hh:mm");
+			final categorywithparent dc = new categorywithparent();
 
 			Object[] r = (Object[]) result.get(i);
-			dc.setCommentId((Integer)r[0]);
-			dc.setComment((String)r[1]);
-			dc.setCommentDate(format.format((Date)r[2]));
-			dc.setUserId((Integer)r[3]);
-			dc.setFirstName((String)r[4]);
-			dc.setLastName((String)r[5]);
-			dc.setPhoto((String)r[6]);
+			dc.setId((Integer)r[0]);
+			dc.setName((String)r[1]);
+			dc.setParentid((Integer)r[2]);
+			dc.setParentcategory((String)r[3]);
+			
 			results.add(dc);
-
-			System.out.println(r[0]);
 		}
 		return results;
 	}

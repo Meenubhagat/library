@@ -10,7 +10,7 @@
   			
  		<td><b>Category Id</b></td>
  		<td><b>Name</b></td>
- 		<td><b>Parent Id</b></td>
+ 		<td><b>Parent</b></td>
  		<td><b>Action</b></td>
  		</tr>
   			
@@ -20,7 +20,7 @@
   	 
 	 <td>${c.id}</td>
 	 <td>${c.name }</td>
-	 <td>${c.pid }</td>
+	 <td>${c.parentcategory }</td>
 	 
 	 
  	<td>

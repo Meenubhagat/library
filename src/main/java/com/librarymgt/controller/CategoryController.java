@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Category;
+import com.librarymgt.model.categorywithparent;
 import com.librarymgt.service.CategoryService;
 
 @Controller
@@ -47,7 +48,7 @@ public class CategoryController {
 	public ModelAndView viewCategory(){
 		ModelAndView mav = new ModelAndView("cat-view");
 		mav.addObject("title1", "Our Category");
-		List<Category> catlist = categoryService.getAllCategory();
+		List<categorywithparent> catlist = categoryService.getCategoryWithParent();
 		mav.addObject("category", catlist);
 		return mav;
 	}

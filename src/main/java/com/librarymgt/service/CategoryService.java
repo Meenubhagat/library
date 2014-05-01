@@ -3,6 +3,7 @@ package com.librarymgt.service;
 import java.util.List;
 
 import com.librarymgt.model.Category;
+import com.librarymgt.model.categorywithparent;
 
 public interface CategoryService {
 	
@@ -16,7 +17,6 @@ public interface CategoryService {
 	
 	public boolean deleteCategoryById(int categoryId);
 
-	public List<Category> getCategoryWithParent();
+	public List<categorywithparent> getCategoryWithParent();
 	
-	public List<Category> convertResultToList();
 }
