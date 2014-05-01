@@ -59,8 +59,12 @@ public class CategoryServiceImp implements CategoryService {
 
 	@Override
 	public List<Category> getCategoriesWithParent() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		final String query = "SELECT category.*, parent.name FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id";
+		final Query q = (Query) em.createNativeQuery(query, Category.class);
+		List<Category> result = (List<Category>) q.getResultList();
+		 
+		return result;
 	}
 
 }
