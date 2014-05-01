@@ -44,6 +44,7 @@ public class UserController {
 		System.out.println(request.getParameter("user_email"));
 		System.out.println(request.getParameter("user_gender"));
 		User user = new User();
+		SELECT category.*, parent.name FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id
 		user.setType(request.getParameter("user_type"));
 		user.setUsername(request.getParameter("user_name"));
 		user.setCourse(request.getParameter("user_course"));
