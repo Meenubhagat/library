@@ -57,4 +57,10 @@ public class CategoryServiceImp implements CategoryService {
 		return false;
 	}
 
+	@Override
+	public List<Category> getCategoriesWithParent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
