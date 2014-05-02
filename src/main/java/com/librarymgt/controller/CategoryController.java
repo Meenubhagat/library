@@ -58,6 +58,8 @@ public class CategoryController {
 		final Category cat1 = categoryService.getCategoryById(id);
 		ModelAndView mav = new ModelAndView("tbl_category");
 		mav.addObject("cat", cat1);
+		List<Category> parentCategorie = categoryService.getParentCategories();
+		mav.addObject("category",parentCategorie);
 		return mav;
 	}
 	
