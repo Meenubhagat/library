@@ -1,6 +1,5 @@
 package com.librarymgt.service.impl;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,12 +47,7 @@ public class CategoryServiceImp implements CategoryService {
 		return result;
 	}
 
-	@Override
-	public Category getCategoryById() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public boolean deleteCategoryById(int categoryId) {
 		// TODO Auto-generated method stub
@@ -84,6 +78,12 @@ public class CategoryServiceImp implements CategoryService {
 			results.add(dc);
 		}
 		return results;
+	}
+
+	@Override
+	public Category getCategoryById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

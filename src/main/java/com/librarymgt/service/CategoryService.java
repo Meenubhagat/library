@@ -11,12 +11,13 @@ public interface CategoryService {
 	
 	public List<Category>getAllCategory();
 	
-	public Category getCategoryById();
+	public Category getCategoryById(int id);
 	
 	public List<Category> getParentCategories();
 	
 	public boolean deleteCategoryById(int categoryId);
 
 	public List<categorywithparent> getCategoryWithParent();
+
 	
 }

@@ -55,8 +55,8 @@ public class CategoryController {
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
 	public ModelAndView editCategory(@PathVariable int id){
-		final Category cat1 = categoryService.getCategoryById();
-		ModelAndView mav = new ModelAndView("cat");
+		final Category cat1 = categoryService.getCategoryById(id);
+		ModelAndView mav = new ModelAndView("tbl_category");
 		mav.addObject("Category", cat1);
 		return mav;
 	}

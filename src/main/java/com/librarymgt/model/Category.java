@@ -23,6 +23,8 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO, generator="seq_cat_id")
 	@SequenceGenerator(name="seq_cat_id", sequenceName="seq_cat_id")
 	
+	
+	
 	@Column(name="cat_id")
 	private Integer id;
 	
