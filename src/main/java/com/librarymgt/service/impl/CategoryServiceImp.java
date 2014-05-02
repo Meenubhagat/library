@@ -82,8 +82,7 @@ public class CategoryServiceImp implements CategoryService {
 
 	@Override
 	public Category getCategoryById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return categoryRepository.findOne(id);
 	}
 
 	

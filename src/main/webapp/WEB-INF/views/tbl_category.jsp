@@ -27,7 +27,8 @@
 			</c:forEach>
 	 </select>
   	 </div>
-  	 </div> <br>		
+  	 </div> <br>
+  	 		
  
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">

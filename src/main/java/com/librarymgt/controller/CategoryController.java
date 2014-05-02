@@ -57,7 +57,7 @@ public class CategoryController {
 	public ModelAndView editCategory(@PathVariable int id){
 		final Category cat1 = categoryService.getCategoryById(id);
 		ModelAndView mav = new ModelAndView("tbl_category");
-		mav.addObject("Category", cat1);
+		mav.addObject("cat", cat1);
 		return mav;
 	}
 	
