@@ -6,21 +6,21 @@
       	<div class="form-group">
  		<label for="inputbookid" class="col-sm-2 control-label">Book Id</label>
     	<div class="col-xs-4"><span class="add-on"><i class="icon-user"></i></span>
-     	<input type="text" class="form-control" id="book_id" name="book_id" placeholder="Enter Book Id" value="${book.book_id }">
+     	<input type="text" class="form-control" id="book_id" name="bookid" placeholder="Enter Book Id" value="${book.bookid }">
    		</div>
  		</div>
  		
  		<div class="form-group">
  		<label for="name" class="col-sm-2 control-label">Book Name</label>
     	<div class="col-xs-4"><span class="add-on"><i class="icon-user"></i></span>
-     	<input type="text" class="form-control" id="book_name" name="book_name" placeholder="Enter Book Name" value="${book.book_name}">
+     	<input type="text" class="form-control" id="book_name" name="name" placeholder="Enter Book Name" value="${book.name}">
    		</div>
  		</div>	
       		
       	<div class="form-group">
       	<label  class="col-sm-2 control-label">Book Code</label>
        	<div class="col-sm-4">
-        <input type="text" class="form-control" id="book_code" placeholder="Book Code" name="book_code"  value="${book.book_code }">
+        <input type="text" class="form-control" id="book_code" placeholder="Book Code" name="code"  value="${book.code }">
         </div>
         </div>   
      
@@ -28,14 +28,14 @@
         <div class="form-group">
   	    <label for="inputauthor" class="col-sm-2 control-label">Book Author</label>
   	    <div class="col-sm-4">
-        <input type="text" class="form-control" id="book_author" placeholder="Enter Book Author" name="book_author"  value="${book.book_author}">
+        <input type="text" class="form-control" id="book_author" placeholder="Enter Book Author" name="author"  value="${book.author}">
         </div>
   	    </div>
   	      
   	    <div class="form-group">
  		<label for="inputprice" class="col-sm-2 control-label">Book Price</label>
     	<div class="col-xs-4"><span class="add-on"><i class="icon-user"></i></span>
-     	<input type="text" class="form-control" id="book_price" name="book_price" placeholder="Enter Book Price"  value="${book.book_price}">
+     	<input type="text" class="form-control" id="book_price" name="price" placeholder="Enter Book Price"  value="${book.price}">
    		</div>
  		</div>	 
 	
@@ -43,14 +43,14 @@
   	    <div class="form-group">
  		<label for="inputrackno" class="col-sm-2 control-label">Rack No.</label>
     	<div class="col-xs-4"><span class="add-on"><i class="icon-user"></i></span>
-     	<input type="text" class="form-control" id="book_rackno" name="book_rackno" placeholder="Enter Rack no"  value="${book.book_rackno}">
+     	<input type="text" class="form-control" id="book_rackno" name="rackno" placeholder="Enter Rack no"  value="${book.rackno}">
    		</div>
  		</div>
  		
  		<div class="form-group">
     	<label for="id" class="col-sm-2 control-label">Category Id</label>
     	<div class="col-xs-4">
-    	<input type="text" class="form-control" id="id" placeholder="Enter Id" name="categoryid"  value="${book.categoryid }">
+    	<input type="text" class="form-control" id="id" placeholder="Enter Id" name="c_id"  value="${book.categoryid }">
     	</div>
  		</div>	 
  		

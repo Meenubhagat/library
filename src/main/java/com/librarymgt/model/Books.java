@@ -38,7 +38,7 @@ public class Books {
 	public String author;
 	
 	@Column(name="date_of_arrival")
-	public Date date;
+	public String date;
 	
 	@Column(name="price")
 	public Float price;
@@ -83,11 +83,13 @@ public class Books {
 		this.author = author;
 	}
 
-	public Date getDate() {
+	
+
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

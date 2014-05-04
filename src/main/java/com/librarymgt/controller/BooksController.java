@@ -2,6 +2,8 @@ package com.librarymgt.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +23,8 @@ public class BooksController {
 	@Autowired
 	BooksService booksService;
 	
+	@Autowired
+	HttpServletRequest request;
 	
 	@RequestMapping(value="/create", method=RequestMethod.GET)
 	public ModelAndView newBookPage(){
@@ -32,7 +36,7 @@ public class BooksController {
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveBook(@ModelAttribute Books book){
 		booksService.create(book);
-		return new ModelAndView(new RedirectView("bookslist"));
+		return new ModelAndView(new RedirectView("booklist"));
 	}
 	
 	@RequestMapping(value="/booklist", method=RequestMethod.GET)
@@ -40,7 +44,7 @@ public class BooksController {
 		ModelAndView mav=new ModelAndView("book-list");
 		mav.addObject("title1","library books");
 		List<Books> booklist = booksService.getAllBooks();
-		mav.addObject("user",booklist);
+		mav.addObject("book",booklist);
 		return mav;
 	}
 

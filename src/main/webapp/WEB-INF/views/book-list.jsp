@@ -12,17 +12,18 @@
   	<td><b>Rack Number</b></td>
   	<td><b>Date of Arrival</b></td>
   	<td><b>Category Id</b></td>	
+  	<td><b>Action</b></td>
   	</tr>
   	
   	<c:forEach items="${requestScope.book}" var="b">
   	<tr>
-	 <td>${b.book_name}</td>
-	 <td>${b.book_code}</td>
-	 <td>${b.book_author}</td>
-	 <td>${b.book_price}</td>
-	 <td>${b.book_rackno}</td>
-	 <td>${b.date_of_arrival}</td>
-	 <td>${b.categoryid }</td>
+	 <td>${b.name}</td>
+	 <td>${b.code}</td>
+	 <td>${b.author}</td>
+	 <td>${b.price}</td>
+	 <td>${b.rackno}</td>
+	 <td>${b.date}</td>
+	 <td>${b.c_id }</td>
  	<td>
  	<a class="btn btn-success btn-sm">Edit</a>
   	<a class="btn btn-danger btn-sm">Delete</a>
