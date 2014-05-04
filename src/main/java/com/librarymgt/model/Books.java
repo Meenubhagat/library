@@ -26,7 +26,7 @@ public class Books {
 	@SequenceGenerator(name="seq_book_id", sequenceName="seq_book_id")
 	
 	@Column(name="book_id")
-	public Integer bookid;
+	private Integer bookid;
 	
 	@Column(name="name")
 	public String name;
@@ -48,6 +48,8 @@ public class Books {
 	
 	@Column(name="category_id")
 	public Integer c_id;
+
+	
 
 	public Integer getBookid() {
 		return bookid;
