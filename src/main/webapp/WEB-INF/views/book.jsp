@@ -1,6 +1,6 @@
 <%@ include file="common/header.jsp"%>
 
-<form class="form-horizontal" action="save" method="post">
+<form class="form-horizontal" action="http://localhost:8080/librarymgt/book/save" method="post">
 	<fieldset>  
       	<legend style="margin:0;padding:10px; text-align:center;"> <b>Books Information </b></legend><br>
       	<div class="form-group">
@@ -50,15 +50,14 @@
  		<div class="form-group">
     	<label for="id" class="col-sm-2 control-label">Category Id</label>
     	<div class="col-xs-4">
-    	<input type="text" class="form-control" id="id" placeholder="Enter Id" name="c_id"  value="${book.categoryid }">
+    	<input type="text" class="form-control" id="id" placeholder="Enter Id" name="c_id"  value="${book.c_id }">
     	</div>
  		</div>	 
  		
  		<div class="form-group">
     	<label for="inputdate" class="col-sm-2 control-label">Date of Arrival</label>
     	<div class="col-xs-10">
-    	<input type="date" id="date_of_arrival" name="date"  value="${book.date }"></input>
-    	
+    	<input type="date" id="date" name="date"  value="${book.date}"></input>
     	</div>
    		</div><br><br>
 	

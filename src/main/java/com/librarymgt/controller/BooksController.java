@@ -53,7 +53,7 @@ public class BooksController {
 	public ModelAndView editBook(@PathVariable int id){
 		final Books book = booksService.getBookById(id);
 		ModelAndView mav = new ModelAndView("book");
-		mav.addObject("Books", book);
+		mav.addObject("book", book);
 		return mav;
 	}
 	
