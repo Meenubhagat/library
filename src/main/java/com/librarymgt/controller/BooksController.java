@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -40,7 +41,7 @@ public class BooksController {
 	}
 	
 	@RequestMapping(value="/booklist", method=RequestMethod.GET)
-	public ModelAndView viewUser(){
+	public ModelAndView viewBooks(){
 		ModelAndView mav=new ModelAndView("book-list");
 		mav.addObject("title1","library books");
 		List<Books> booklist = booksService.getAllBooks();
@@ -48,4 +49,12 @@ public class BooksController {
 		return mav;
 	}
 
+	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
+	public ModelAndView editBook(@PathVariable int id){
+		final Books book = booksService.getBookById(id);
+		ModelAndView mav = new ModelAndView("book");
+		mav.addObject("Books", book);
+		return mav;
+	}
+	
 }

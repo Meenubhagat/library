@@ -26,4 +26,10 @@ public class BooksServiceImp implements BooksService {
 		return (List<Books>) booksRepository.findAll();
 	}
 
+	@Override
+	public Books getBookById(int id) {
+		
+		return booksRepository.findOne(id);
+	}
+
 }
