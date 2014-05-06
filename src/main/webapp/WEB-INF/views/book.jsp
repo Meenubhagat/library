@@ -46,29 +46,23 @@
      	<input type="text" class="form-control" id="book_rackno" name="rackno" placeholder="Enter Rack no"  value="${book.rackno}">
    		</div>
  		</div>
- 		
+ 	
  		<div class="form-group">
-    	<label for="id" class="col-sm-2 control-label">Category Id</label>
+    	<label for="inputcid" class="col-sm-2 control-label">Category Id</label>
     	<div class="col-xs-4">
-    	<input type="text" class="form-control" id="id" placeholder="Enter Id" name="c_id"  value="${book.c_id }">
-    	</div>
- 		</div>	 
- 		
- 		<div class="form-group">
-    <label for="inputcid" class="col-sm-2 control-label">Category Id</label>
-    	<div class="col-xs-4">
-     		<select class="form-control" id="c_id" name="c_id">
-<c:forEach items="${category}" var="cat">
-   <option value="${cat.id}"
-     <c:if test="${(cat.id == book.c_id)}">
-      selected="selected"
-     </c:if>>
-   ${cat.name}
-   </option>
-</c:forEach>
-</select>
-   		 </div>
-  </div><br>
+     	<select class="form-control" id="c_id" name="c_id">
+		<c:forEach items="${category}" var="cat">
+   		<option value="${cat.id}"
+    	<c:if test="${(cat.id == book.c_id)}">
+      	selected="selected"
+     	</c:if>>
+   		${cat.name}
+   		</option>
+		</c:forEach>
+		</select>
+   		</div>
+  		</div>
+  		
  		<div class="form-group">
     	<label for="inputdate" class="col-sm-2 control-label">Date of Arrival</label>
     	<div class="col-xs-10">
