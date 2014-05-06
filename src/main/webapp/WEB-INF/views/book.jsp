@@ -58,22 +58,15 @@
     <label for="inputcid" class="col-sm-2 control-label">Category Id</label>
     	<div class="col-xs-4">
      		<select class="form-control" id="c_id" name="c_id">
-  				<option <c:if test="${book.c_id.equals(\"Data Base\")}">
-   					selected
-   	 					</c:if>>Data Base</option>
-   	 
-  			<option <c:if test="${book.c_id.equals(\"PHP\")}">
-   				selected
-   	 				</c:if>>PHP</option>
-   	 
-  			<option <c:if test="${book.c_id.equals(\"Programming Language\")}">
-   				selected
-   					 </c:if>>Programming Language</option>
-   	 
-  			<option <c:if test="${book.c_id.equals(\"Language\")}">
-   				selected
-   	 				</c:if>>Language</option>
-			</select>
+<c:forEach items="${category}" var="cat">
+   <option value="${cat.id}"
+     <c:if test="${(cat.id == book.c_id)}">
+      selected="selected"
+     </c:if>>
+   ${cat.name}
+   </option>
+</c:forEach>
+</select>
    		 </div>
   </div><br>
  		<div class="form-group">

@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.categorywithparent;
 import com.librarymgt.service.BooksService;
+import com.librarymgt.service.CategoryService;
 
 @Controller
 @RequestMapping(value="/book")
@@ -25,12 +27,17 @@ public class BooksController {
 	BooksService booksService;
 	
 	@Autowired
+	CategoryService categoryService;
+	
+	@Autowired
 	HttpServletRequest request;
 	
 	@RequestMapping(value="/create", method=RequestMethod.GET)
 	public ModelAndView newBookPage(){
 	ModelAndView mav = new ModelAndView("book");
 	mav.addObject("title1", "Our Books");
+	List<categorywithparent> catlist = categoryService.getCategoryWithParent();
+	mav.addObject("category", catlist);
 		return mav;
 	}
 	
