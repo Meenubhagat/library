@@ -55,6 +55,28 @@
  		</div>	 
  		
  		<div class="form-group">
+    <label for="inputcid" class="col-sm-2 control-label">Category Id</label>
+    	<div class="col-xs-4">
+     		<select class="form-control" id="c_id" name="c_id">
+  				<option <c:if test="${book.c_id.equals(\"Data Base\")}">
+   					selected
+   	 					</c:if>>Data Base</option>
+   	 
+  			<option <c:if test="${book.c_id.equals(\"PHP\")}">
+   				selected
+   	 				</c:if>>PHP</option>
+   	 
+  			<option <c:if test="${book.c_id.equals(\"Programming Language\")}">
+   				selected
+   					 </c:if>>Programming Language</option>
+   	 
+  			<option <c:if test="${book.c_id.equals(\"Language\")}">
+   				selected
+   	 				</c:if>>Language</option>
+			</select>
+   		 </div>
+  </div><br>
+ 		<div class="form-group">
     	<label for="inputdate" class="col-sm-2 control-label">Date of Arrival</label>
     	<div class="col-xs-10">
     	<input type="date" id="date" name="date"  value="${book.date}"></input>
