@@ -1,7 +1,5 @@
 package com.librarymgt.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +24,7 @@ public class Books {
 	@SequenceGenerator(name="seq_book_id", sequenceName="seq_book_id")
 	
 	@Column(name="book_id")
-	private Integer bookid;
+	private Integer id;
 	
 	@Column(name="name")
 	public String name;
@@ -51,12 +49,13 @@ public class Books {
 
 	
 
-	public Integer getBookid() {
-		return bookid;
+	
+	public Integer getId() {
+		return id;
 	}
 
-	public void setBookid(Integer bookid) {
-		this.bookid = bookid;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -116,10 +115,5 @@ public class Books {
 	public void setC_id(Integer c_id) {
 		this.c_id = c_id;
 	}
-	
-	
-	
-	
-	
 
 }

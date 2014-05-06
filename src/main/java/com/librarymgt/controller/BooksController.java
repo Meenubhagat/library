@@ -57,4 +57,12 @@ public class BooksController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public ModelAndView deleteBook(@PathVariable int id){
+		System.out.println("id:" + id);
+		booksService.deleteBookById(id);
+		return new ModelAndView(new RedirectView("/librarymgt/book/booklist"));
+		
+	}
+	
 }

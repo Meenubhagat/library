@@ -5,7 +5,8 @@
 
 <table class="table table-striped">
 
-  	<tr><td><b>Book Name</b></td>
+  	<tr>
+  	<td><b>Book Name</b></td>
   	<td><b>Book Code</b></td>
   	<td><b>Book Author</b></td>
   	<td><b>Book price</b></td>
@@ -24,8 +25,8 @@
 	 <td>${b.date}</td>
 	 <td>${b.c_id }</td>
  	<td>
- 	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/edit/${b.bookid}">Edit</a>
-  	<a class="btn btn-danger btn-sm">Delete</a>
+ 	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/edit/${b.id}">Edit</a>
+  	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/book/delete/${b.id}">Delete</a>
  	</td>
  	</tr>
  	</c:forEach>

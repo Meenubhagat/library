@@ -32,4 +32,13 @@ public class BooksServiceImp implements BooksService {
 		return booksRepository.findOne(id);
 	}
 
+	@Override
+	public boolean deleteBookById(int bookId) {
+		booksRepository.delete(bookId);
+		return true;
+	}
+
+	
+
+	
 }
