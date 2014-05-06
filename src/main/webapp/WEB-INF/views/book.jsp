@@ -6,7 +6,7 @@
       	<div class="form-group">
  		<label for="inputbookid" class="col-sm-2 control-label">Book Id</label>
     	<div class="col-xs-4"><span class="add-on"><i class="icon-user"></i></span>
-     	<input type="text" class="form-control" id="book_id" name="bookid" placeholder="Enter Book Id" value="${book.id }">
+     	<input type="text" class="form-control" id="book_id" name="id" placeholder="Enter Book Id" value="${book.id }">
    		</div>
  		</div>
  		
