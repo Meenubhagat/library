@@ -14,9 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.Issuebook;
+import com.librarymgt.model.User;
 import com.librarymgt.model.categorywithparent;
 import com.librarymgt.service.BooksService;
 import com.librarymgt.service.CategoryService;
+import com.librarymgt.service.UserService;
 
 @Controller
 @RequestMapping(value="/book")
@@ -28,6 +31,9 @@ public class BooksController {
 	
 	@Autowired
 	CategoryService categoryService;
+	
+	@Autowired
+	UserService userService;
 	
 	@Autowired
 	HttpServletRequest request;
@@ -70,6 +76,23 @@ public class BooksController {
 		booksService.deleteBookById(id);
 		return new ModelAndView(new RedirectView("/librarymgt/book/booklist"));
 		
+	}
+	
+	@RequestMapping(value="/issue", method=RequestMethod.GET)
+	public ModelAndView issueBook(){
+		List<Books> books = booksService.getAllBooks();
+		ModelAndView mav = new ModelAndView("bookissue");
+		mav.addObject("issue-book", "new book");
+		mav.addObject("books", books);
+		List<User> users = userService.getAllUser();
+		mav.addObject("users" , users);
+		return mav;
+	}
+	
+	@RequestMapping(value="/booksaved", method=RequestMethod.GET)
+	public ModelAndView saveissuebook(@ModelAttribute Issuebook book){
+		booksService.issue(book);
+		return null;
 	}
 	
 }

@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.Issuebook;
 import com.librarymgt.repository.BooksRepository;
+import com.librarymgt.repository.IssueBookRepository;
 import com.librarymgt.service.BooksService;
 
 @Service
@@ -14,6 +16,9 @@ public class BooksServiceImp implements BooksService {
 	
 	@Autowired
 	BooksRepository booksRepository;
+	
+	@Autowired
+	IssueBookRepository issuebookReository;
 
 	@Override
 	public Books create(Books books) {
@@ -36,6 +41,12 @@ public class BooksServiceImp implements BooksService {
 	public boolean deleteBookById(int bookId) {
 		booksRepository.delete(bookId);
 		return true;
+	}
+
+	@Override
+	public Issuebook issue(Issuebook book) {
+		Issuebook issuedBook = book;
+		return issuebookReository.save(issuedBook);
 	}
 
 	
