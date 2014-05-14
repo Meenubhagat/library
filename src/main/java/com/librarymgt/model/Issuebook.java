@@ -23,12 +23,12 @@ public class Issuebook {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO, generator="seq_book_id")
 	@SequenceGenerator(name="seq_book_id", sequenceName="seq_book_id")
+
+	@Column(name="issue_id")
+	private Integer id;
 	
 	@Column(name="book_id")
 	public Integer bookid;
-	
-	@Column(name="issue_id")
-	private Integer id;
 	
 	@Column(name="user_id")
 	public Integer userid;

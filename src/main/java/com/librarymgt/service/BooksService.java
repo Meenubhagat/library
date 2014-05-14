@@ -16,5 +16,11 @@ public interface BooksService {
 	public boolean deleteBookById(int bookId);
 	
 	public Issuebook issue(Issuebook book);
+	
+	public List<Issuebook>getAllIssuedBooks();
+	
+	public Issuebook getIssuedbookById(int Id);
+	
+	public boolean deleteissuedbookById(int Id);
 
 }

@@ -1,12 +1,12 @@
 <%@ include file="common/header.jsp"%>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="booksaved" method="post">
 	<fieldset>  
       	<legend style="margin:0;padding:10px; text-align:center;"> <b>Issue Book Information </b></legend><br>
       	<div class="form-group">
  		<label for="inputissueid" class="col-sm-2 control-label">Issue Id</label>
     	<div class="col-sm-4">
-        <input type="text" class="form-control" id="issue_id" placeholder="Enter issue id" name="issue_id" value="${book.id}">
+        <input type="text" class="form-control" id="issue_id" placeholder="Enter issue id" name="id" value="${book.id}">
    		</div>
  		</div>
  	

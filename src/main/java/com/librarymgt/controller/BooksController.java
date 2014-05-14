@@ -1,5 +1,6 @@
 package com.librarymgt.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -89,10 +90,35 @@ public class BooksController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/booksaved", method=RequestMethod.GET)
+	@RequestMapping(value="/booksaved", method=RequestMethod.POST)
 	public ModelAndView saveissuebook(@ModelAttribute Issuebook book){
+		System.out.println(request.getParameter("userid"));
+		System.out.println(request.getParameter("bookid"));
+		book.setIssueDate(new Date().toString());
 		booksService.issue(book);
-		return null;
+		return new ModelAndView(new RedirectView("issuedbooklist"));
 	}
 	
+	@RequestMapping(value="/issuedbooklist", method=RequestMethod.GET)
+	public ModelAndView viewissuedBook(){
+		ModelAndView mav = new ModelAndView("issuedbook-list");
+		mav.addObject("title2","issuedbooks");
+		List<Issuebook> issuedbooklist = booksService.getAllIssuedBooks();
+		mav.addObject("issuedbooks", issuedbooklist);
+		return mav;
+	}
+	
+	@RequestMapping(value="/editissuebook/{id}", method=RequestMethod.GET)
+	public ModelAndView editissuebook(@PathVariable int Id){
+		final Issuebook bookissue = booksService.getIssuedbookById(Id);
+		ModelAndView mav = new ModelAndView("bookissue");
+		mav.addObject("bookissue", bookissue);
+		return mav;
+	}
+	
+	@RequestMapping(value="/deleteissuebook/{id}", method=RequestMethod.GET)
+	public ModelAndView deleteissuebook(@PathVariable int Id){
+		System.out.println("id:" + Id);
+		return new ModelAndView(new RedirectView("/librarymgt/book/issuedbooklist"));
+	}
 }

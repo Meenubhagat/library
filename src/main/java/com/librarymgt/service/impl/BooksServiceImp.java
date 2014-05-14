@@ -18,7 +18,7 @@ public class BooksServiceImp implements BooksService {
 	BooksRepository booksRepository;
 	
 	@Autowired
-	IssueBookRepository issuebookReository;
+	IssueBookRepository issuebookRepository;
 
 	@Override
 	public Books create(Books books) {
@@ -46,10 +46,26 @@ public class BooksServiceImp implements BooksService {
 	@Override
 	public Issuebook issue(Issuebook book) {
 		Issuebook issuedBook = book;
-		return issuebookReository.save(issuedBook);
+		return issuebookRepository.save(issuedBook);
 	}
 
-	
+	@Override
+	public List<Issuebook> getAllIssuedBooks() {
+		
+		return (List<Issuebook>) issuebookRepository.findAll();
+	}
 
-	
+	@Override
+	public Issuebook getIssuedbookById(int Id) {
+		
+		return issuebookRepository.findOne(Id);
+	}
+
+	@Override
+	public boolean deleteissuedbookById(int Id) {
+		booksRepository.delete(Id);
+		return true;
+	}
+
+
 }
