@@ -3,7 +3,9 @@ package com.librarymgt.service;
 import java.util.List;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.Category;
 import com.librarymgt.model.Issuebook;
+import com.librarymgt.model.issuebookwithbook;
 
 public interface BooksService {
 	
@@ -22,5 +24,9 @@ public interface BooksService {
 	public Issuebook getIssuedbookById(int Id);
 	
 	public boolean deleteissuedbookById(int Id);
+	
+	public List<Issuebook> getIssueBook();
+	
+	public List<issuebookwithbook> getIssuebookWithBook();
 
 }
