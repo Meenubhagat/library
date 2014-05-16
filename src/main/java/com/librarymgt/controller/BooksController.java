@@ -106,6 +106,7 @@ public class BooksController {
 		List<Issuebook> issuedbooklist = booksService.getAllIssuedBooks();
 		mav.addObject("issuedbooks", issuedbooklist);
 		return mav;
+		
 	}
 	
 	@RequestMapping(value="/editissuebook/{id}", method=RequestMethod.GET)

@@ -10,11 +10,10 @@
   			
  		<td><b>Issued Id</b></td>
  		<td><b>User Id</b></td>
- 		<td><b>Book Name</b></td>
+	    <td><b>Book Name</b></td>
  		<td><b>Action</b></td>
  		</tr>
-  			
-  				
+
  	<c:forEach items="${requestScope.issuedbooks}" var="i">
   	<tr>
   	 
