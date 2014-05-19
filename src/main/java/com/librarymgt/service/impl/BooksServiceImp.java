@@ -97,16 +97,15 @@ public class BooksServiceImp implements BooksService {
 
 	private List<issuebookwithbook> convertResultToList(final List<Object> result) {
 		final List<issuebookwithbook> results = new ArrayList<issuebookwithbook>();
-		for(int i=0;i<results.size();i++){
-		final issuebookwithbook dc = new issuebookwithbook();
-		
-			Object[] r = (Object[]) result.get(i);
+		for(int i=0;i<result.size();i++){
+			final issuebookwithbook dc = new issuebookwithbook();
+			Object[] r = (Object[]) result.get(i);			
 		    dc.setId((Integer) r[0]);
-		    dc.setIssuebook((String) r[1]);
-		    dc.setIssueid((Integer) r[2]);
-		    dc.setName((String)r[3]);
+		    dc.setIssuebook((String) r[2]);
+		    dc.setIssueid((Integer) r[1]);
+		    dc.setName((String)r[5]);
 		    
-		    result.add(dc);
+		    results.add(dc);
 	}
 	return results;
 

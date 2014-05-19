@@ -18,6 +18,7 @@ import com.librarymgt.model.Books;
 import com.librarymgt.model.Issuebook;
 import com.librarymgt.model.User;
 import com.librarymgt.model.categorywithparent;
+import com.librarymgt.model.issuebookwithbook;
 import com.librarymgt.service.BooksService;
 import com.librarymgt.service.CategoryService;
 import com.librarymgt.service.UserService;
@@ -103,7 +104,8 @@ public class BooksController {
 	public ModelAndView viewissuedBook(){
 		ModelAndView mav = new ModelAndView("issuedbook-list");
 		mav.addObject("title2","issuedbooks");
-		List<Issuebook> issuedbooklist = booksService.getAllIssuedBooks();
+		List<issuebookwithbook> issuedbooklist = booksService.getIssuebookWithBook();
+		System.out.println("count: " + issuedbooklist.size());
 		mav.addObject("issuedbooks", issuedbooklist);
 		return mav;
 		
