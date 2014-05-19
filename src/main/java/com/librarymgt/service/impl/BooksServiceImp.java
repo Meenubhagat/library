@@ -79,7 +79,7 @@ public class BooksServiceImp implements BooksService {
 
 	@Override
 	public List<issuebookwithbook> getIssuebookWithBook() {
-		final String query = "SELECT issuebook.*, book.name  FROM  tbl_issue_book issuebook,  tbl_book book  WHERE issuebook.book_id = book.book_id";
+		final String query = "SELECT issuebook.*, book.name, CONCAT(users.firstname, ' ',users.lastname) AS username FROM tbl_issue_book issuebook, tbl_book book, tbl_user users WHERE issuebook.book_id = book.book_id AND issuebook.user_id = users.user_id";
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Object> result = q.getResultList();
 		
@@ -104,6 +104,7 @@ public class BooksServiceImp implements BooksService {
 		    dc.setIssuebook((String) r[2]);
 		    dc.setIssueid((Integer) r[1]);
 		    dc.setName((String)r[5]);
+		    dc.setUsername((String) r[6]);
 		    
 		    results.add(dc);
 	}

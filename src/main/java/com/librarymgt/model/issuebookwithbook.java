@@ -9,6 +9,9 @@ public class issuebookwithbook {
 	public Integer issueid;
 	
 	public String issuebook;
+	
+	public String username;
+	
 
 	public Integer getId() {
 		return id;
@@ -16,6 +19,14 @@ public class issuebookwithbook {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getName() {

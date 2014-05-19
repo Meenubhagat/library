@@ -11,6 +11,7 @@
  		<td><b>Issued Id</b></td>
  		<td><b>User Id</b></td>
 	    <td><b>Book Name</b></td>
+	    <td><b>Issued By</b></td>
  		<td><b>Action</b></td>
  		</tr>
 
@@ -19,6 +20,7 @@
 	 <td>${i.id}</td>
 	 <td>${i.issueid}</td>
 	 <td>${i.name}</td>
+	 <td>${i.username}</td>
 	 
 	 
  	<td>
