@@ -48,8 +48,15 @@ public class AuthController {
 		user1.setGender("male");
 		
 		userService.create(user1);
-		return new ModelAndView(new RedirectView("userlist"));
+		return new ModelAndView(new RedirectView("thankyou"));
 		
+	}
+	
+	@RequestMapping(value="/thankyou", method=RequestMethod.GET)
+	public ModelAndView thankyousave(){
+		ModelAndView mav = new ModelAndView("thanku-registration");
+		
+		return mav;
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)

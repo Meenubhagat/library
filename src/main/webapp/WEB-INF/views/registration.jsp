@@ -29,7 +29,7 @@
 	<input class="form-control" placeholder="Password" name="password" type="password" id="password" value="${user.password }">
 	</div>
 			    	
-	<input class="btn btn-lg btn-success btn-block" type="submit" value="Register">
+	<input class="btn btn-lg btn-success btn-block" type="submit" value="Register" href="${pageContext.request.contextPath}/register/save">
 			    	
 	</form>
 	</div>
@@ -37,7 +37,4 @@
 	</div>
 	</div>
 
- 
- 
-  
 </fieldset>
