@@ -125,4 +125,12 @@ public class BooksController {
 		System.out.println("id:" + Id);
 		return new ModelAndView(new RedirectView("/librarymgt/book/issuedbooklist"));
 	}
+	
+	@RequestMapping(value="/returndetail/{id}", method=RequestMethod.GET)
+	public ModelAndView viewdetail(){
+		ModelAndView mav = new ModelAndView("returndetail");
+		mav.addObject("return", "returnbooks");
+		
+		return mav;
+	}
 }

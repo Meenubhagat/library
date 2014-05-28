@@ -35,7 +35,8 @@
         <li class="active"><a href="/cencolshare/">Home</a></li>
         <sec:authorize access="isAuthenticated()">
 		    <li><a href="${pageContext.request.contextPath}/cat/catlist">Category</a></li>
-		    <li><a href="${pageContext.request.contextPath}/books">Books</a></li>
+		    <li><a href="${pageContext.request.contextPath}/book/booklist">Books</a></li>
+		    <li><a href="${pageContext.request.contextPath}/book/issuedbooklist">issued Books</a></li>
 		</sec:authorize>        
       </ul>
       <ul class="nav navbar-nav pull-right">

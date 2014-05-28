@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.librarymgt.model.Books;
 import com.librarymgt.model.Issuebook;
+import com.librarymgt.model.Returnbookwithdetail;
 import com.librarymgt.model.issuebookwithbook;
 import com.librarymgt.repository.BooksRepository;
 import com.librarymgt.repository.IssueBookRepository;
@@ -105,6 +106,34 @@ public class BooksServiceImp implements BooksService {
 		    dc.setIssueid((Integer) r[1]);
 		    dc.setName((String)r[5]);
 		    dc.setUsername((String) r[6]);
+		    
+		    results.add(dc);
+	}
+	return results;
+
+
+}
+
+	@Override
+	public List<Returnbookwithdetail> getReturnbookwithdetail() {
+		
+		final String query = "SELECT * FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.cat_id = category.cat_id";
+		final Query q = (Query) em.createNativeQuery(query);
+		List<Object> result = q.getResultList();
+		
+		return convertResultToReturnList(result);
+	}
+	
+	private List<Returnbookwithdetail> convertResultToReturnList(final List<Object> result) {
+		final List<Returnbookwithdetail> results = new ArrayList<Returnbookwithdetail>();
+		for(int i=0;i<result.size();i++){
+			final Returnbookwithdetail dc = new Returnbookwithdetail();
+			Object[] r = (Object[]) result.get(i);			
+		    dc.setId((Integer) r[0]);
+		    dc.setIssuedby((String) r[2]);
+		    dc.setId((Integer) r[1]);
+		    dc.setBookname((String)r[5]);
+		    dc.setUserid((Integer) r[6]);
 		    
 		    results.add(dc);
 	}

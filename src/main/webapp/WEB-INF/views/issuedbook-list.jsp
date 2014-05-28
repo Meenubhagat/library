@@ -26,7 +26,7 @@
  	<td>
  	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/editissuebook/${i.id}">Edit</a>
   	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/book/deleteissuebook/${i.id}">Delete</a>
-  	
+  	<a type="button" class="btn btn-success btn-sm" >Return</a>
  	</td>
  	</tr>
  	</c:forEach>

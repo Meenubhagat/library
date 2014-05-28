@@ -48,7 +48,7 @@ public class AuthController {
 		user1.setGender("male");
 		
 		userService.create(user1);
-		return new ModelAndView(new RedirectView("thankyou"));
+		return new ModelAndView(new RedirectView("/librarymgt/register/thankyou"));
 		
 	}
 	
