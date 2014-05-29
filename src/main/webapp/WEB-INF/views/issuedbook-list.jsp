@@ -17,17 +17,13 @@
 
  	<c:forEach items="${requestScope.issuedbooks}" var="i">
   	<tr>
-	 <td>${i.id}</td>
-	 <td>${i.issueid}</td>
-	 <td>${i.name}</td>
-	 <td>${i.username}</td>
+	
+	 <td>${i.issuedid}</td>
+	  <td>${i.userid}</td>
+	 <td>${i.bookname}</td>
 	 
 	 
- 	<td>
- 	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/editissuebook/${i.id}">Edit</a>
-  	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/book/deleteissuebook/${i.id}">Delete</a>
-  	<a type="button" class="btn btn-success btn-sm" >Return</a>
- 	</td>
+	
  	</tr>
  	</c:forEach>
   			

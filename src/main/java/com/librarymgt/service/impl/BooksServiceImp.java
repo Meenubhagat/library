@@ -129,11 +129,10 @@ public class BooksServiceImp implements BooksService {
 		for(int i=0;i<result.size();i++){
 			final Returnbookwithdetail dc = new Returnbookwithdetail();
 			Object[] r = (Object[]) result.get(i);			
-		    dc.setId((Integer) r[0]);
-		    dc.setIssuedid((Integer) r[1]);
-		    dc.setUserid((Integer) r[2]);
-		    dc.setBookname((String)r[3]);
-		    dc.setIssuedby((String) r[4]);
+		    dc.setIssuedid((Integer) r[0]);
+		    dc.setUserid((Integer) r[1]);
+		    dc.setBookname((String)r[2]);
+		    dc.setIssuedby((String) r[3]);
 		  
 		    results.add(dc);
 	}

@@ -2,7 +2,6 @@ package com.librarymgt.model;
 
 public class Returnbookwithdetail {
 	
-	private Integer id;
 	
 	public Integer issuedid;
 	
@@ -12,13 +11,6 @@ public class Returnbookwithdetail {
 	
 	public String issuedby;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public Integer getIssuedid() {
 		return issuedid;

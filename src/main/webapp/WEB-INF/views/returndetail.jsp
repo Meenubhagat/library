@@ -11,9 +11,7 @@
   	<c:forEach items="${requestScope.book}" var="b">
   	
 	
-	<tr><b>Issued Id</b>${i.id}</tr>
- 	<tr><b>User Id</b>${i.issueid}</tr>
-	<tr><b>Issued By</b>${i.username}</tr>
+	
  	</c:forEach>
   			
   		
