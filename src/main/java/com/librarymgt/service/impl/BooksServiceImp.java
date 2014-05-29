@@ -117,7 +117,7 @@ public class BooksServiceImp implements BooksService {
 	@Override
 	public List<Returnbookwithdetail> getReturnbookwithdetail() {
 		
-		final String query = "SELECT * FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.cat_id = category.cat_id";
+		final String query = "SELECT issuebooks.issue_id,users.user_id ,books.name, users.firstname FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.cat_id = category.cat_id";
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Object> result = q.getResultList();
 		
@@ -130,11 +130,11 @@ public class BooksServiceImp implements BooksService {
 			final Returnbookwithdetail dc = new Returnbookwithdetail();
 			Object[] r = (Object[]) result.get(i);			
 		    dc.setId((Integer) r[0]);
-		    dc.setIssuedby((String) r[2]);
-		    dc.setId((Integer) r[1]);
-		    dc.setBookname((String)r[5]);
-		    dc.setUserid((Integer) r[6]);
-		    
+		    dc.setIssuedid((Integer) r[1]);
+		    dc.setUserid((Integer) r[2]);
+		    dc.setBookname((String)r[3]);
+		    dc.setIssuedby((String) r[4]);
+		  
 		    results.add(dc);
 	}
 	return results;

@@ -16,6 +16,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
 import com.librarymgt.model.Issuebook;
+import com.librarymgt.model.Returnbookwithdetail;
 import com.librarymgt.model.User;
 import com.librarymgt.model.categorywithparent;
 import com.librarymgt.model.issuebookwithbook;
@@ -105,9 +106,11 @@ public class BooksController {
 	public ModelAndView viewissuedBook(){
 		ModelAndView mav = new ModelAndView("issuedbook-list");
 		mav.addObject("title2","issuedbooks");
-		List<issuebookwithbook> issuedbooklist = booksService.getIssuebookWithBook();
-		System.out.println("count: " + issuedbooklist.size());
-		mav.addObject("issuedbooks", issuedbooklist);
+		List<Returnbookwithdetail> issuedbooklist = booksService.getReturnbookwithdetail();
+		//List<issuebookwithbook> issuedbooklist1 = booksService.getIssuebookWithBook();
+		//System.out.println("count: " + issuedbooklist1.size());
+		mav.addObject("issuedbooks",issuedbooklist);
+		//mav.addObject("issuedbooks", issuedbooklist1);
 		return mav;
 		
 	}
