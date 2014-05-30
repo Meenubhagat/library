@@ -15,7 +15,7 @@ public interface CategoryService {
 	
 	public List<Category> getParentCategories();
 	
-	public boolean deleteCategoryById(int categoryId);
+	public void deleteCategoryById(int categoryId);
 
 	public List<categorywithparent> getCategoryWithParent();
 

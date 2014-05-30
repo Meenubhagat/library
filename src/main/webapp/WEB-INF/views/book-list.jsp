@@ -1,7 +1,9 @@
 <%@ include file="common/header.jsp"%>
 
 <center><h1>Books Detail</h1></center>
-<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/create"><b>New User</b></a>
+<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/create"><b>New Book</b></a>
+<br/>
+<br/>
 
 <table class="table table-striped">
 

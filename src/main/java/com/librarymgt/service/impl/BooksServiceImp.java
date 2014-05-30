@@ -80,7 +80,8 @@ public class BooksServiceImp implements BooksService {
 
 	@Override
 	public List<issuebookwithbook> getIssuebookWithBook() {
-		final String query = "SELECT issuebook.*, book.name, CONCAT(users.firstname, ' ',users.lastname) AS username FROM tbl_issue_book issuebook, tbl_book book, tbl_user users WHERE issuebook.book_id = book.book_id AND issuebook.user_id = users.user_id";
+		//final String query = "SELECT issuebook.*, book.name, CONCAT(users.firstname, ' ',users.lastname) AS username FROM tbl_issue_book issuebook, tbl_book book, tbl_user users WHERE issuebook.book_id = book.book_id AND issuebook.user_id = users.user_id";
+		final String query = "SELECT issuebooks.issue_id,users.user_id ,books.name, users.firstname,category.name as catname  FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.category_id = category.cat_id";
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Object> result = q.getResultList();
 		
@@ -101,11 +102,11 @@ public class BooksServiceImp implements BooksService {
 		for(int i=0;i<result.size();i++){
 			final issuebookwithbook dc = new issuebookwithbook();
 			Object[] r = (Object[]) result.get(i);			
-		    dc.setId((Integer) r[0]);
+		    
+			dc.setIssueid((Integer) r[0]);
 		    dc.setIssuebook((String) r[2]);
-		    dc.setIssueid((Integer) r[1]);
-		    dc.setName((String)r[5]);
-		    dc.setUsername((String) r[6]);
+		    dc.setUsername((String) r[3]);
+		    dc.setCategory((String) r[4]);
 		    
 		    results.add(dc);
 	}
@@ -117,7 +118,7 @@ public class BooksServiceImp implements BooksService {
 	@Override
 	public List<Returnbookwithdetail> getReturnbookwithdetail() {
 		
-		final String query = "SELECT issuebooks.issue_id,users.user_id ,books.name, users.firstname FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.cat_id = category.cat_id";
+		final String query = "SELECT issuebooks.issue_id,users.user_id ,books.name, users.firstname,category.name as catname  FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users , tbl_cat category WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND books.category_id = category.cat_id";
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Object> result = q.getResultList();
 		

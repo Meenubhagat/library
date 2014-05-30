@@ -9,7 +9,6 @@
   		<tr>
   			
  		<td><b>Issued Id</b></td>
- 		<td><b>User Id</b></td>
 	    <td><b>Book Name</b></td>
 	    <td><b>Issued By</b></td>
  		<td><b>Action</b></td>
@@ -18,9 +17,10 @@
  	<c:forEach items="${requestScope.issuedbooks}" var="i">
   	<tr>
 	
-	 <td>${i.issuedid}</td>
-	  <td>${i.userid}</td>
-	 <td>${i.bookname}</td>
+	 <td>${i.issueid}</td>
+	 <td>${i.issuebook}</td>
+	 <td>${i.username}</td>
+	 <td>${i.category}</td>
 	 
 	 
 	

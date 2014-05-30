@@ -2,9 +2,9 @@
 
   		<center><h1>Category Detail</h1></center>
 		<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/cat/create">
-		<b>New User</b>
+			<b>New Category</b>
 		</a>
-		
+		<br/><br/>
   		<table class="table table-striped">
   		<tr>
   			
@@ -21,9 +21,8 @@
 	 <td>${c.id}</td>
 	 <td>${c.name }</td>
 	 <td>${c.parentcategory }</td>
-	 
-	 
  	<td>
+
  	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/cat/edit/${c.id}">Edit</a>
   	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/cat/delete/${c.id}">Delete</a>
   	

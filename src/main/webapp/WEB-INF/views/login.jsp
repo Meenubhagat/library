@@ -2,8 +2,7 @@
 
 <div class="container"> 
    
-<c:url value="http://localhost:8080/librarymgt/login" var="loginUrl"/>
-<form action="${loginUrl}" method="post" class="col-xs-4 form-signin" role="form"> 
+<form action="${pageContext.request.contextPath}/login" method="post" class="col-xs-4 form-signin" role="form"> 
 	<h2 class="form-signin-heading">Please sign in</h2>      
     <c:if test="${param.error != null}">        
         <p>

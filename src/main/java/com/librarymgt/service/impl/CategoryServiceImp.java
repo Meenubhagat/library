@@ -49,9 +49,8 @@ public class CategoryServiceImp implements CategoryService {
 
 	
 	@Override
-	public boolean deleteCategoryById(int categoryId) {
-		// TODO Auto-generated method stub
-		return false;
+	public void deleteCategoryById(int categoryId) {
+		categoryRepository.delete(categoryId); 
 	}
 
 	@Override

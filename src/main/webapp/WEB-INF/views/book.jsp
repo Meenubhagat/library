@@ -1,6 +1,6 @@
 <%@ include file="common/header.jsp"%>
 
-<form class="form-horizontal" action="http://localhost:8080/librarymgt/book/save" method="post">
+<form class="form-horizontal" action="${pageContext.request.contextPath}/book/save" method="post">
 	<fieldset>  
       	<legend style="margin:0;padding:10px; text-align:center;"> <b>Books Information </b></legend><br>
       	<div class="form-group">

@@ -30,15 +30,14 @@ public class CategoryController {
 	@RequestMapping(value="/create", method=RequestMethod.GET)
 	public ModelAndView newCategoryPage(){
 		ModelAndView mav = new ModelAndView("tbl_category");
-		mav.addObject("title1", "Our Category");
-		List<Category> parentCategorie = categoryService.getParentCategories();
-		System.out.println(parentCategorie.get(0).getName());
-		mav.addObject("category",parentCategorie);
+		List<Category> parentCategories = categoryService.getParentCategories();
+		mav.addObject("category",parentCategories);
 		return mav;
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveCategory(@ModelAttribute Category category){
+		System.out.println("id:" + category.getId());
 		categoryService.create(category);
 		return new ModelAndView(new RedirectView("catlist"));
 		
@@ -47,7 +46,6 @@ public class CategoryController {
 	@RequestMapping(value="/catlist", method=RequestMethod.GET)
 	public ModelAndView viewCategory(){
 		ModelAndView mav = new ModelAndView("cat-view");
-		mav.addObject("title1", "Our Category");
 		List<categorywithparent> catlist = categoryService.getCategoryWithParent();
 		mav.addObject("category", catlist);
 		return mav;

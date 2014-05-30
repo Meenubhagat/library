@@ -106,10 +106,10 @@ public class BooksController {
 	public ModelAndView viewissuedBook(){
 		ModelAndView mav = new ModelAndView("issuedbook-list");
 		mav.addObject("title2","issuedbooks");
-		List<Returnbookwithdetail> issuedbooklist = booksService.getReturnbookwithdetail();
-		//List<issuebookwithbook> issuedbooklist1 = booksService.getIssuebookWithBook();
+		//List<Returnbookwithdetail> issuedbooklist = booksService.getReturnbookwithdetail();
+		List<issuebookwithbook> issuedbooklist1 = booksService.getIssuebookWithBook();
 		//System.out.println("count: " + issuedbooklist1.size());
-		mav.addObject("issuedbooks",issuedbooklist);
+		mav.addObject("issuedbooks",issuedbooklist1);
 		//mav.addObject("issuedbooks", issuedbooklist1);
 		return mav;
 		
