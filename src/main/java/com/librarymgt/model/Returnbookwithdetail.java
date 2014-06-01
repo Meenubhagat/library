@@ -5,7 +5,7 @@ public class Returnbookwithdetail {
 	
 	public Integer issuedid;
 	
-	public Integer userid;
+	public String username;
 	
 	public String bookname;
 	
@@ -20,12 +20,14 @@ public class Returnbookwithdetail {
 		this.issuedid = issuedid;
 	}
 
-	public Integer getUserid() {
-		return userid;
+	
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserid(Integer userid) {
-		this.userid = userid;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getBookname() {

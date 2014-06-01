@@ -8,7 +8,14 @@
       <input type="hidden" class="form-control" id="id" placeholder="Enter Id" name="categoryid" value="${cat.id }">
     </div>
   </div> --%>
-  <input type="text" class="form-control" id="id" placeholder="Enter Id" name="id" value="${cat.id }">
+  
+  <div class="form-group">
+    <label for="id" class="col-sm-2 control-label">Category Id</label>
+    <div class="col-xs-4">
+      <input type="text" class="form-control" id="id" placeholder="Enter Id" name="id" value="${cat.id }">
+    </div>
+  </div>
+  
   
   <div class="form-group">
     <label for="name" class="col-sm-2 control-label">Name</label>

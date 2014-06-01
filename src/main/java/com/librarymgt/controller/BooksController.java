@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
 import com.librarymgt.model.Issuebook;
-import com.librarymgt.model.Returnbookwithdetail;
+import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.User;
 import com.librarymgt.model.categorywithparent;
 import com.librarymgt.model.issuebookwithbook;
@@ -129,11 +129,12 @@ public class BooksController {
 		return new ModelAndView(new RedirectView("/librarymgt/book/issuedbooklist"));
 	}
 	
-	@RequestMapping(value="/returndetail/{id}", method=RequestMethod.GET)
-	public ModelAndView viewdetail(){
-		ModelAndView mav = new ModelAndView("returndetail");
-		mav.addObject("return", "returnbooks");
-		
+	@RequestMapping(value="/issuedbookdetail/{id}", method=RequestMethod.GET)
+	public ModelAndView viewdetail(int issuedId){
+		ModelAndView mav = new ModelAndView("issuedbookdetail");
+		mav.addObject("return", "issuedbookdetail");
+		List<Issuedbokswithdetail> issuedbookdetail = booksService.getIssuedbokwithdetail(issuedId);
+		mav.addObject("issuedbookdetail", issuedbookdetail);
 		return mav;
 	}
 }

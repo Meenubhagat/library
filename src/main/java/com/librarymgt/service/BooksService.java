@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.librarymgt.model.Books;
 import com.librarymgt.model.Issuebook;
+import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.Returnbookwithdetail;
 import com.librarymgt.model.issuebookwithbook;
 
@@ -30,5 +31,7 @@ public interface BooksService {
 	public List<issuebookwithbook> getIssuebookWithBook();
 	
 	public List<Returnbookwithdetail> getReturnbookwithdetail();
+	
+	public List<Issuedbokswithdetail> getIssuedbokwithdetail(int issuedId);
 
 }

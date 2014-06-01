@@ -11,6 +11,7 @@
  		<td><b>Issued Id</b></td>
 	    <td><b>Book Name</b></td>
 	    <td><b>Issued By</b></td>
+	    <td><b>Category</b></td>
  		<td><b>Action</b></td>
  		</tr>
 
@@ -22,8 +23,11 @@
 	 <td>${i.username}</td>
 	 <td>${i.category}</td>
 	 
-	 
-	
+	 <td>
+ 	<a class="btn btn-success btn-sm" >Return</a>
+  	<a class="btn btn-danger btn-sm" >Detail</a>
+ 	</td>
+
  	</tr>
  	</c:forEach>
   			
