@@ -21,4 +21,14 @@
   <tr><b>Return Date</b></tr>
   <tr><b>Fine</b></tr>      		
 	</td>	
+	
+	<c:forEach items="${requestScope.issuedbookdetail}" var="d">
+  	<tr>
+	
+	 <td>${}</td>
+	 <td>${}</td>
+	 <td>${}</td>
+	 <td>${}</td>
+	 
+	 </tr>
 </table>
