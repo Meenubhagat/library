@@ -32,6 +32,6 @@ public interface BooksService {
 	
 	public List<Returnbookwithdetail> getReturnbookwithdetail();
 	
-	public List<Issuedbokswithdetail> getIssuedbokwithdetail(int issuedId);
+	public Issuedbokswithdetail getIssuedbokwithdetail(int issuedId);
 
 }
