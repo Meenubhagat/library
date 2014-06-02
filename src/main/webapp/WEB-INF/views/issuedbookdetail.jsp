@@ -6,19 +6,19 @@
 <table class="table table-striped">
 
 <td>
-  <tr><b>Book Name</b> </tr>
-  <tr><b>Book Author</b> </tr>		
-  <tr><b>Book Code</b></tr>		
-  <tr><b>Book Price</b></tr>		
-  <tr><b>Rack Number</b></tr>
-  <tr><b>User Email</b></tr>		
-  <tr><b>User Course</b></tr>
-  <tr><b>User Name</b></tr>		
-  <tr><b>Gender</b></tr>    
-  <tr><b>Roll Number</b></tr>  
-  <tr><b>Issue Id</b></tr>  
-  <tr><b>Issue Date</b></tr>
-  <tr><b>Return Date</b></tr>
-  <tr><b>Fine</b></tr>      		
+  <tr><b>Book Name: ${issuedbookdetail.bookname}</br></br> </tr>
+  <tr><b>Book Author</br></br> </tr>		
+  <tr><b>Book Code</br></br></tr>		
+  <tr><b>Book Price</br></br></tr>		
+  <tr><b>Rack Number</br></br></tr>
+  <tr><b>User Email</br></br></tr>		
+  <tr><b>User Course</br></br></tr>
+  <tr><b>User Name</br></br></tr>		
+  <tr><b>Gender</br></br></tr>    
+  <tr><b>Roll Number</br></br></tr>  
+  <tr><b>Issue Id</br></br></tr>  
+  <tr><b>Issue Date</br></br></tr>
+  <tr><b>Return Date</br></br></tr>
+  <tr><b>Fine</br></br></tr>      		
 	</td>	
 </table>

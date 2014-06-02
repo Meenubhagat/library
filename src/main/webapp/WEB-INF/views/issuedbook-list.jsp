@@ -25,7 +25,7 @@
 	 
 	 <td>
  	<a class="btn btn-success btn-sm" >Return</a>
-  	<a class="btn btn-danger btn-sm" >Detail</a>
+  	<a href="${pageContext.request.contextPath}/book/issuedbookdetail/${i.issueid}" class="btn btn-danger btn-sm" >Detail</a>
  	</td>
 
  	</tr>

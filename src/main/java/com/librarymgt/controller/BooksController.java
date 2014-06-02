@@ -130,10 +130,10 @@ public class BooksController {
 	}
 	
 	@RequestMapping(value="/issuedbookdetail/{id}", method=RequestMethod.GET)
-	public ModelAndView viewdetail(int issuedId){
+	public ModelAndView viewdetail(@PathVariable int id){
 		ModelAndView mav = new ModelAndView("issuedbookdetail");
 		mav.addObject("return", "issuedbookdetail");
-		List<Issuedbokswithdetail> issuedbookdetail = booksService.getIssuedbokwithdetail(issuedId);
+		Issuedbokswithdetail issuedbookdetail = booksService.getIssuedbokwithdetail(id);
 		mav.addObject("issuedbookdetail", issuedbookdetail);
 		return mav;
 	}

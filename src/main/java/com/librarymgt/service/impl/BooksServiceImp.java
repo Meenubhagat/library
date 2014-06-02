@@ -139,7 +139,7 @@ public class BooksServiceImp implements BooksService {
 	}
 
 	@Override
-	public List<Issuedbokswithdetail> getIssuedbokwithdetail(int issuedId) {
+	public Issuedbokswithdetail getIssuedbokwithdetail(int issuedId) {
 		final String query = "SELECT books.name,books.author,books.code,books.price,books.rackno,users.email,users.course,users.firstname,users.gender,users.rollno,issuebooks.issue_id,issuebooks.issue_date FROM tbl_book books, tbl_issue_book issuebooks, tbl_user users  WHERE books.book_id = issuebooks.book_id AND users.user_id = issuebooks.user_id AND issuebooks.issue_id = " + issuedId;
 		final Query q = (Query) em.createNativeQuery(query);
 		List<Object> result = q.getResultList();
@@ -147,26 +147,24 @@ public class BooksServiceImp implements BooksService {
 		return convertResultTodeatilList(result);
 	}
 	
-	private List<Issuedbokswithdetail> convertResultTodeatilList(List<Object> result) {
-		final List<Issuedbokswithdetail> results = new ArrayList<Issuedbokswithdetail>();
-		for(int i=0; i<result.size(); i++){
-			final Issuedbokswithdetail dc = new Issuedbokswithdetail();
-			Object[] d = (Object[]) result.get(i);
-			dc.setBookname((String) d[0]);
-			dc.setBookauthor((String) d[1]);
-			dc.setBookcode((String) d[2]);
-			dc.setBookprice((Float) d[3]);
-			dc.setRackno((Integer) d[5]);
-			dc.setUseremail((String) d[6]);
-			dc.setCourse((String) d[7]);
-			dc.setName((String) d[8]);
-			dc.setGender((String) d[9]);
-			dc.setRollno((Integer) d[10]);
-			dc.setIssueid((Integer) d[11]);
-			dc.setIssuedate((String) d[12]);
-			results.add(dc);
-		}
-		return results;
+	private Issuedbokswithdetail convertResultTodeatilList(List<Object> result) {
+		final Issuedbokswithdetail results = new Issuedbokswithdetail();
+		
+		final Issuedbokswithdetail dc = new Issuedbokswithdetail();
+		Object[] d = (Object[]) result.get(0);
+		dc.setBookname((String) d[0]);
+		dc.setBookauthor((String) d[1]);
+//		dc.setBookcode((String) d[2]);
+//		dc.setBookprice((Float) d[3]);
+//		dc.setRackno((Integer) d[5]);
+//		dc.setUseremail((String) d[6]);
+//		dc.setCourse((String) d[7]);
+//		dc.setName((String) d[8]);
+//		dc.setGender((String) d[9]);
+//		dc.setRollno((Integer) d[10]);
+//		dc.setIssueid((Integer) d[11]);
+//		dc.setIssuedate((String) d[12]);
+		return dc;
 	}
 	
 }
