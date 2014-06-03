@@ -26,6 +26,8 @@ public class Issuedbokswithdetail {
 	
 	public String issuedate;
 	
+	public String returndate;
+	
 	public Integer fine;
 	
 	public Integer dayleft;
@@ -127,6 +129,15 @@ public class Issuedbokswithdetail {
 
 	public void setIssuedate(String issuedate) {
 		this.issuedate = issuedate;
+	}
+
+	
+	public String getReturndate() {
+		return returndate;
+	}
+
+	public void setReturndate(String returndate) {
+		this.returndate = returndate;
 	}
 
 	public Integer getFine() {

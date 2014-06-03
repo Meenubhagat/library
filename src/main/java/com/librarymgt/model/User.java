@@ -45,7 +45,7 @@ public class User {
 	public String course;
 	
 	@Column(name="rollno", nullable=true)
-	public String rollno;
+	public Integer rollno;
 
 	@Column(name="password", nullable=false)
     public String password;
@@ -111,11 +111,12 @@ public class User {
 		this.course = course;
 	}
 
-	public String getRollno() {
+
+	public Integer getRollno() {
 		return rollno;
 	}
 
-	public void setRollno(String rollno) {
+	public void setRollno(Integer rollno) {
 		this.rollno = rollno;
 	}
 

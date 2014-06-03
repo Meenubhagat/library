@@ -23,12 +23,12 @@
   	<tr>
   	 
 	 <td>${u.firstname} ${u.middlename} ${u.lastname}</td>
-	 <td>${u.gender }</td>
-	 <td>${u.type }</td>
-	 <td>${u.course }</td>
+	 <td>${u.gender}</td>
+	 <td>${u.type}</td>
+	 <td>${u.course}</td>
 	 <td>${u.rollno}</td>
-	 <td>${u.email }</td>
-	 <td>${u.enabled }</td>
+	 <td>${u.email}</td>
+	 <td>${u.enabled}</td>
 	 
 	 
  	<td>

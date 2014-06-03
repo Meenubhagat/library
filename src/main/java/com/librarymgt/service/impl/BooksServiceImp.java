@@ -154,16 +154,17 @@ public class BooksServiceImp implements BooksService {
 		Object[] d = (Object[]) result.get(0);
 		dc.setBookname((String) d[0]);
 		dc.setBookauthor((String) d[1]);
-//		dc.setBookcode((String) d[2]);
-//		dc.setBookprice((Float) d[3]);
-//		dc.setRackno((Integer) d[5]);
-//		dc.setUseremail((String) d[6]);
-//		dc.setCourse((String) d[7]);
-//		dc.setName((String) d[8]);
-//		dc.setGender((String) d[9]);
-//		dc.setRollno((Integer) d[10]);
-//		dc.setIssueid((Integer) d[11]);
-//		dc.setIssuedate((String) d[12]);
+		dc.setBookcode((String) d[2]);
+		dc.setBookprice((Float) d[3]);
+		dc.setRackno((Integer) d[4]);
+		dc.setUseremail((String) d[5]);
+		dc.setCourse((String) d[6]);
+		dc.setName((String) d[7]);
+		dc.setGender((String) d[8]);
+		dc.setRollno((Integer) d[9]);
+		dc.setIssueid((Integer) d[10]);
+		dc.setIssuedate((String) d[11]);
+	//	dc.setReturndate((String) d[12]);
 		return dc;
 	}
 	
