@@ -53,7 +53,7 @@ public class BooksController {
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	public ModelAndView saveBook(@ModelAttribute Books book){
 		booksService.create(book);
-		return new ModelAndView(new RedirectView("booklist"));
+		return new ModelAndView(new RedirectView("booklist"));	
 	}
 	
 	@RequestMapping(value="/booklist", method=RequestMethod.GET)
@@ -112,7 +112,6 @@ public class BooksController {
 		mav.addObject("issuedbooks",issuedbooklist1);
 		//mav.addObject("issuedbooks", issuedbooklist1);
 		return mav;
-		
 	}
 	
 	@RequestMapping(value="/editissuebook/{id}", method=RequestMethod.GET)
@@ -137,4 +136,5 @@ public class BooksController {
 		mav.addObject("issuedbookdetail", issuedbookdetail);
 		return mav;
 	}
+	
 }

@@ -1,5 +1,6 @@
 package com.librarymgt.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -44,13 +45,24 @@ public class UserController {
 		System.out.println(request.getParameter("user_email"));
 		System.out.println(request.getParameter("user_gender"));
 		User user = new User();
-		SELECT category.*, parent.name FROM tbl_cat category, tbl_cat parent WHERE category.parent_id = parent.cat_id
 		user.setType(request.getParameter("user_type"));
 		user.setUsername(request.getParameter("user_name"));
 		user.setCourse(request.getParameter("user_course"));
 		user.setRollno(request.getParameter("user_rollno"));
 		user.setEmail(request.getParameter("user_email"));
 		user.setGender(request.getParameter("user_gender"));*/
+		
+		 // create a calendar
+	      Calendar cal = Calendar.getInstance();
+		  
+	      // print current date
+	      System.out.println("The current date is : " + cal.getTime());
+
+	      // add 20 days to the calendar
+	      cal.add(Calendar.DATE, 20);
+	      System.out.println("20 days later: " + cal.getTime());
+	      
+
 		user.setRole(Role.User);
 		
 		userService.create(user);
@@ -65,6 +77,8 @@ public class UserController {
 		List<User> userlist = userService.getAllUser();
 		mav.addObject("user",userlist);
 		return mav;
+		
+		
 	}
 	
 	@RequestMapping(value="/edit/{id}", method=RequestMethod.GET)
