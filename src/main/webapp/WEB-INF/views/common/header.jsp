@@ -28,11 +28,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">CencolShare</a>
+      <a class="navbar-brand" href="#">LIBRARY MANAGEMENT</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/cencolshare/">Home</a></li>
+        <li class="active"><a href="${pageContext.request.contextPath}/cencolshare/">Home</a></li>
         <sec:authorize access="isAuthenticated()">
 		    <li><a href="${pageContext.request.contextPath}/cat/catlist">Category</a></li>
 		    <li><a href="${pageContext.request.contextPath}/book/booklist">Books</a></li>

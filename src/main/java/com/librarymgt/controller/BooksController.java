@@ -1,5 +1,8 @@
 package com.librarymgt.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -134,6 +137,36 @@ public class BooksController {
 		mav.addObject("return", "issuedbookdetail");
 		Issuedbokswithdetail issuedbookdetail = booksService.getIssuedbokwithdetail(id);
 		mav.addObject("issuedbookdetail", issuedbookdetail);
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		String issueDate =  issuedbookdetail.getIssuedate();
+		Date date = null;
+		try {
+			date = formatter.parse(issueDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+ 
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		long milis1 = cal.getTimeInMillis();
+		System.out.println("The current date is : " + cal.getTime());
+		cal.add(Calendar.DATE, 14);
+		System.out.println("14 days later: " + cal.getTime());
+		
+		issuedbookdetail.setReturndate(cal.getTime().toString());
+		
+		
+        long milis2 = cal.getTimeInMillis();
+        
+        // Calculate difference in milliseconds
+        long diff = milis2 - milis1;
+        
+        // Calculate difference in days
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+        
+        System.out.println("In milliseconds: " + diff + " milliseconds.");
+        System.out.println("In days: " + diffDays + " days.");
+		   
 		return mav;
 	}
 	

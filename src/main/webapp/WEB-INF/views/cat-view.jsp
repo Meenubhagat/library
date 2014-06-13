@@ -10,7 +10,7 @@
   			
  		<td><b>Category Id</b></td>
  		<td><b>Name</b></td>
- 		<td><b>Parent</b></td>
+ 		<td><b>Parent Category</b></td>
  		<td><b>Action</b></td>
  		</tr>
   			
@@ -19,8 +19,8 @@
   	<tr>
   	 
 	 <td>${c.id}</td>
-	 <td>${c.name }</td>
-	 <td>${c.parentcategory }</td>
+	 <td>${c.name}</td>
+	 <td>${c.parentcategory}</td>
  	<td>
 
  	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/cat/edit/${c.id}">Edit</a>

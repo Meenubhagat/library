@@ -23,7 +23,7 @@
       <input type="text" required class="form-control" id="name" placeholder="Enter Name" name="name" value="${cat.name }">
     </div>
   </div>
-  ${cat.pid }
+  
   <div class="form-group">
   	 <label for="p_id" class="col-sm-2 control-label">Parent Id</label>
   	 <div class="col-xs-4">
@@ -46,7 +46,10 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Submit</button>
-      <button type="button" class="btn btn-warning">Cancel</button>
+   
+      <a type="button" class="btn btn-warning" href="${pageContext.request.contextPath}/cat/catlist">
+      <b>Cancel</b>
+		</a>
     </div>
   </div>
   </fieldset>
