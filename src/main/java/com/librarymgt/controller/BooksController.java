@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.Category;
 import com.librarymgt.model.Issuebook;
 import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.User;
@@ -65,6 +66,8 @@ public class BooksController {
 		mav.addObject("title1","library books");
 		List<Books> booklist = booksService.getAllBooks();
 		mav.addObject("book",booklist);
+		List<Category> categories = categoryService.getAllCategory();
+		mav.addObject("category", categories);
 		return mav;
 	}
 
@@ -154,19 +157,22 @@ public class BooksController {
 		System.out.println("14 days later: " + cal.getTime());
 		
 		issuedbookdetail.setReturndate(cal.getTime().toString());
-		
-		
         long milis2 = cal.getTimeInMillis();
-        
         // Calculate difference in milliseconds
-        long diff = milis2 - milis1;
-        
+        long diff = (new Date()).getTime() - date.getTime();
+
         // Calculate difference in days
         long diffDays = diff / (24 * 60 * 60 * 1000);
-        
         System.out.println("In milliseconds: " + diff + " milliseconds.");
         System.out.println("In days: " + diffDays + " days.");
-		   
+        int fine = 0;
+		   if(diffDays > 14){
+			   fine = (int) (diffDays - 14);
+			   System.out.println("fine is :" + fine);
+		   }else{
+			   System.out.println("None" );
+		   }
+		   issuedbookdetail.setFine(fine);
 		return mav;
 	}
 	

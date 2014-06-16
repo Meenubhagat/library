@@ -72,7 +72,10 @@
 	
   		 <div class="col-xs-4">
   	 	<center><button type="submit" class="btn btn-success btn-sm">Save</button>
-  	 	<button type="button" class="btn btn-danger btn-sm">Cancel</button></center>
+  	 	  <a type="button" class="btn btn-warning" href="${pageContext.request.contextPath}/book/booklist">
+      <b>Cancel</b>
+		</a>
+  	 	
   	 	</div>
      	</fieldset> 		
 

@@ -1,8 +1,8 @@
 <%@ include file="common/header.jsp"%>
 
-  		<center><h1>Category Detail</h1></center>
+  		<center><h1>Issued book and User Detail</h1></center>
 		<a type="button" class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/issue">
-		<b>New User</b>
+		<b>issue Book</b>
 		</a>
 
   		<table class="table table-striped">

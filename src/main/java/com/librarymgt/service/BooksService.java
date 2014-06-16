@@ -30,6 +30,8 @@ public interface BooksService {
 	
 	public List<issuebookwithbook> getIssuebookWithBook();
 	
+	public List<Books> getBooks();
+	
 	public List<Returnbookwithdetail> getReturnbookwithdetail();
 	
 	public Issuedbokswithdetail getIssuedbokwithdetail(int issuedId);
