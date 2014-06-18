@@ -184,14 +184,15 @@ public class BooksServiceImp implements BooksService {
 			final BooksWithCatName bc = new BooksWithCatName();
 
 			Object[] r = (Object[]) result.get(i);
+			bc.setId((Integer)r[0]);
+			bc.setbAuthor((String)r[1]);
+			bc.setBookcategory((String)r[2]);
+	//		bc.setbCode((String)r[3]);
+			bc.setbDateOfArrival((String)r[4]);
+	//		bc.setbName((String)r[5]);
+		//	bc.setbPrice((Float)r[6]);
+		//	bc.setbRackno((Integer)r[7]);
 			
-			bc.setbName((String)r[1]);
-			bc.setbCode((String)r[2]);
-			bc.setbAuthor((String)r[3]);
-			bc.setbPrice((Float)r[4]);
-			bc.setbRackno((Integer)r[5]);
-			bc.setbDateOfArrival((String)r[6]);
-			bc.setBookcategory((String)r[7]);
 			results.add(bc);
 		}
 		return results;
