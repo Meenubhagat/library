@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.librarymgt.model.Books;
-import com.librarymgt.model.Category;
+import com.librarymgt.model.BooksWithCatName;
 import com.librarymgt.model.Issuebook;
 import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.User;
@@ -64,10 +64,10 @@ public class BooksController {
 	public ModelAndView viewBooks(){
 		ModelAndView mav=new ModelAndView("book-list");
 		mav.addObject("title1","library books");
-		List<Books> booklist = booksService.getAllBooks();
-		mav.addObject("book",booklist);
-		List<Category> categories = categoryService.getAllCategory();
-		mav.addObject("category", categories);
+		//List<Books> booklist = booksService.getAllBooks();
+		//mav.addObject("book",booklist);
+		List<BooksWithCatName> booklist = booksService.getBooksWithCatName();
+		mav.addObject("books", booklist);
 		return mav;
 	}
 

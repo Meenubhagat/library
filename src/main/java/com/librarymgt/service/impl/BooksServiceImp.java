@@ -11,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.BooksWithCatName;
 import com.librarymgt.model.Issuebook;
 import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.Returnbookwithdetail;
+import com.librarymgt.model.categorywithparent;
 import com.librarymgt.model.issuebookwithbook;
 import com.librarymgt.repository.BooksRepository;
 import com.librarymgt.repository.IssueBookRepository;
@@ -169,9 +171,30 @@ public class BooksServiceImp implements BooksService {
 	}
 
 	@Override
-	public List<Books> getBooks() {
-		
-		return null;
+	public List<BooksWithCatName> getBooksWithCatName() {
+		final String query = "SELECT books.*, category.name AS categoryname FROM tbl_cat category,tbl_book books WHERE category.cat_id = books.cat_id";
+		final Query q = (Query) em.createNativeQuery(query);
+		List<Object> result =  q.getResultList();
+		return convertResultToMyList(result);
+	}
+
+	private List<BooksWithCatName> convertResultToMyList(final List<Object> result) {
+		final List<BooksWithCatName> results = new ArrayList<BooksWithCatName>();
+		for (int i = 0; i < result.size(); i++) {
+			final BooksWithCatName bc = new BooksWithCatName();
+
+			Object[] r = (Object[]) result.get(i);
+			
+			bc.setbName((String)r[1]);
+			bc.setbCode((String)r[2]);
+			bc.setbAuthor((String)r[3]);
+			bc.setbPrice((Float)r[4]);
+			bc.setbRackno((Integer)r[5]);
+			bc.setbDateOfArrival((String)r[6]);
+			bc.setBookcategory((String)r[7]);
+			results.add(bc);
+		}
+		return results;
 	}
 	
 }

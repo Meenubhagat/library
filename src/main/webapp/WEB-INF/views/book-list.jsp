@@ -8,6 +8,7 @@
 <table class="table table-striped">
 
   	<tr>
+  	<td><b>Book Id</b></td>
   	<td><b>Book Name</b></td>
   	<td><b>Book Code</b></td>
   	<td><b>Book Author</b></td>

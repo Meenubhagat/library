@@ -3,6 +3,7 @@ package com.librarymgt.service;
 import java.util.List;
 
 import com.librarymgt.model.Books;
+import com.librarymgt.model.BooksWithCatName;
 import com.librarymgt.model.Issuebook;
 import com.librarymgt.model.Issuedbokswithdetail;
 import com.librarymgt.model.Returnbookwithdetail;
@@ -30,7 +31,7 @@ public interface BooksService {
 	
 	public List<issuebookwithbook> getIssuebookWithBook();
 	
-	public List<Books> getBooks();
+	public List<BooksWithCatName> getBooksWithCatName();
 	
 	public List<Returnbookwithdetail> getReturnbookwithdetail();
 	
