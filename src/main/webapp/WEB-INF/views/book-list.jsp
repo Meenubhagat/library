@@ -18,15 +18,16 @@
   	<td><b>Category Id</b></td>	
   	<td><b>Action</b></td></tr>
   	
-  	<c:forEach items="${requestScope.book}" var="b">
+  	<c:forEach items="${requestScope.books}" var="b">
   	<tr>
-	 <td>${b.name}</td>
-	 <td>${b.code}</td> 
-	 <td>${b.author}</td>
-	 <td>${b.price}</td>
-	 <td>${b.rackno}</td>
-	 <td>${b.date}</td>
-	 <td>${b.c_id }</td>
+  	  <td>${b.id}</td>
+	 <td>${b.bName}</td>
+	 <td>${b.bCode}</td> 
+	 <td>${b.bAuthor}</td>
+	 <td>${b.bPrice}</td>
+	 <td>${b.bRackno}</td>
+	 <td>${b.bDateOfArrival}</td>
+	 <td>${b.bookcategory }</td>
  	<td>
  	<a class="btn btn-success btn-sm" href="${pageContext.request.contextPath}/book/edit/${b.id}">Edit</a>
   	<a class="btn btn-danger btn-sm" href="${pageContext.request.contextPath}/book/delete/${b.id}">Delete</a>

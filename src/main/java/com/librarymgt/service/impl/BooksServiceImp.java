@@ -187,11 +187,11 @@ public class BooksServiceImp implements BooksService {
 			bc.setId((Integer)r[0]);
 			bc.setbAuthor((String)r[1]);
 			bc.setBookcategory((String)r[2]);
-	//		bc.setbCode((String)r[3]);
+			bc.setbCode((String)r[3]);
 			bc.setbDateOfArrival((String)r[4]);
-	//		bc.setbName((String)r[5]);
-		//	bc.setbPrice((Float)r[6]);
-		//	bc.setbRackno((Integer)r[7]);
+			bc.setbName((String)r[5]);
+			bc.setbPrice((Float)r[6]);
+			bc.setbRackno((Integer)r[7]);
 			
 			results.add(bc);
 		}

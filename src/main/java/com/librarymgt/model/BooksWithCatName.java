@@ -2,7 +2,7 @@ package com.librarymgt.model;
 
 public class BooksWithCatName {
 	
-	private Integer id;
+	public Integer id;
 	
 	public String bName;
 	
